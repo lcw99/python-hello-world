@@ -1,3 +1,22 @@
 {
-  "redirects": [{ "source": "/", "destination": "/api" }]
+    "version": 2,
+    "builds": [
+        {
+            "src": "api/saju.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/saju",
+            "dest": "/api/saju.py"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/public/$1"
+        }
+    ],
+    "env": {
+        "SAJU_API_KEY": "skk-test"
+    }
 }
